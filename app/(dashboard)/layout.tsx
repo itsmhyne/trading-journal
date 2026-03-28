@@ -14,6 +14,7 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
+import { ToggleTheme } from "@/components/toggle-theme"
 export default function DashboardLayout({
   children,
 }: Readonly<{
@@ -23,13 +24,15 @@ export default function DashboardLayout({
     <SidebarProvider>
       <AppSidebar />
       <SidebarInset>
-        <header className="flex h-16 shrink-0 items-center gap-2">
+        <header className="flex h-16 shrink-0 items-center justify-between">
+          {/* LEFT */}
           <div className="flex items-center gap-2 px-4">
             <SidebarTrigger className="-ms-1" />
             <Separator
               orientation="vertical"
               className="me-2 data-vertical:h-4 data-vertical:self-auto"
             />
+
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem className="hidden md:block">
@@ -41,6 +44,14 @@ export default function DashboardLayout({
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
+          </div>
+
+          {/* RIGHT */}
+          <div className="flex items-center gap-2.5 px-4">
+            <small className="hidden text-slate-500 italic md:block">
+              Terakhir diperbarui 02 November 2025 15:00 WIB
+            </small>
+            <ToggleTheme />
           </div>
         </header>
         <div className="flex flex-1 flex-col p-4 pt-0">{children}</div>

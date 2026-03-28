@@ -34,7 +34,11 @@ import {
   TargetIcon,
   NotebookPenIcon,
   BellDotIcon,
+  BadgeDollarSignIcon,
+  BadgeQuestionMark,
+  Brain,
 } from "lucide-react"
+import { NavBasics } from "./nav-basic"
 
 const data = {
   user: {
@@ -57,26 +61,26 @@ const data = {
       items: [],
     },
     {
-      title: "Analitic",
-      url: "#",
+      title: "Analyticts",
+      url: "analyticts",
       icon: <ChartLineIcon />,
       items: [],
     },
     {
       title: "Kalender PnL",
-      url: "#",
+      url: "calendar",
       icon: <CalendarDays />,
       items: [],
     },
     {
       title: "Goal & Risk Manajemen",
-      url: "#",
+      url: "goals",
       icon: <TargetIcon />,
       items: [],
     },
     {
       title: "Trading Notes",
-      url: "#",
+      url: "notes",
       icon: <NotebookPenIcon />,
       items: [],
     },
@@ -87,17 +91,17 @@ const data = {
       items: [
         {
           title: "Profile",
-          url: "#",
+          url: "profile",
         },
         {
           title: "Preference",
-          url: "#",
+          url: "preference",
         },
       ],
     },
     {
       title: "Notification",
-      url: "#",
+      url: "notification",
       icon: <BellDotIcon />,
       items: [],
     },
@@ -114,23 +118,18 @@ const data = {
       icon: <SendIcon />,
     },
   ],
-  // projects: [
-  //   {
-  //     name: "Design Engineering",
-  //     url: "#",
-  //     icon: <FrameIcon />,
-  //   },
-  //   {
-  //     name: "Sales & Marketing",
-  //     url: "#",
-  //     icon: <PieChartIcon />,
-  //   },
-  //   {
-  //     name: "Travel",
-  //     url: "#",
-  //     icon: <MapIcon />,
-  //   },
-  // ],
+  projects: [
+    {
+      name: "Pair",
+      url: "pair",
+      icon: <BadgeDollarSignIcon />,
+    },
+    {
+      name: "Strategy",
+      url: "strategy",
+      icon: <Brain />,
+    },
+  ],
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -155,7 +154,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        {/* <NavProjects projects={data.projects} /> */}
+        <NavBasics projects={data.projects} />
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>

@@ -1,4 +1,4 @@
-export default function Journal() {
+export default function Analyticts() {
   return (
     <div>
       <h1>INI analyticts</h1>

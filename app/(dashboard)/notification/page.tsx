@@ -1,7 +1,7 @@
-export default function Notes() {
+export default function Page() {
   return (
     <div>
-      <h1>INI notes</h1>
+      <h1>INI notification</h1>
     </div>
   )
 }

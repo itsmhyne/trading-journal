@@ -1,7 +1,7 @@
-export default function Journal() {
+export default function Profile() {
   return (
     <div>
-      <h1>INI Seettings</h1>
+      <h1>INI profile</h1>
     </div>
   )
 }
