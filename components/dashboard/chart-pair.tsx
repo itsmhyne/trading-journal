@@ -32,15 +32,15 @@ const chartConfig = {
   },
   xauusd: {
     label: "XAUUSD",
-    color: "var(--chart-1)",
+    color: "var(--yellow)",
   },
   btcusd: {
     label: "BTCUSD",
-    color: "var(--chart-2)",
+    color: "var(--red)",
   },
   usoil: {
     label: "USOIL",
-    color: "var(--chart-3)",
+    color: "var(--sky)",
   },
 } satisfies ChartConfig
 
@@ -48,8 +48,8 @@ export function ChartPair() {
   return (
     <Card className="flex flex-col">
       <CardHeader className="items-center pb-0">
-        <CardTitle>Pie Chart - Label List</CardTitle>
-        <CardDescription>January - June 2024</CardDescription>
+        <CardTitle>Pair Trade</CardTitle>
+        <CardDescription>January - December 2025</CardDescription>
       </CardHeader>
       <CardContent className="flex-1 pb-0">
         <ChartContainer
@@ -79,7 +79,7 @@ export function ChartPair() {
           Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
         </div>
         <div className="leading-none text-muted-foreground">
-          Showing total visitors for the last 6 months
+          Showing total trade pair in 1 year
         </div>
       </CardFooter>
     </Card>

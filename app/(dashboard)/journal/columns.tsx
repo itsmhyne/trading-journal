@@ -22,7 +22,20 @@ export const columns: ColumnDef<Journal>[] = [
   { accessorKey: "type_exit", header: "Type Exit" },
   { accessorKey: "sl_tp", header: "SL/TP" },
   { accessorKey: "rr", header: "RR" },
-  { accessorKey: "total_profit_loss", header: "Total" },
+  {
+    accessorKey: "total_profit_loss",
+    header: "Total($)",
+    cell: ({ row }) => {
+      const val = row.getValue("total_profit_loss") as number
+      return (
+        <div
+          className={`font-medium ${val > 0 ? "text-emerald-500" : "text-red-500"}`}
+        >
+          {row.getValue("total_profit_loss")}
+        </div>
+      )
+    },
+  },
   { accessorKey: "reason_entry", header: "Reason" },
   {
     id: "actions",
@@ -33,7 +46,10 @@ export const columns: ColumnDef<Journal>[] = [
       return (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="h-8 w-8 p-0">
+            <Button
+              variant="ghost"
+              className="h-8 w-8 p-0 hover:cursor-pointer"
+            >
               <span className="sr-only">Open menu</span>
               <MoreHorizontal className="h-4 w-4" />
             </Button>
