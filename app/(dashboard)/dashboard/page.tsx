@@ -1,4 +1,6 @@
 import { ChartAreaInteractive } from "@/components/dashboard/chart-interactive"
+import { ChartPair } from "@/components/dashboard/chart-pair"
+import { ChartSession } from "@/components/dashboard/chart-session"
 import { SectionCards } from "@/components/dashboard/section-card"
 
 export default function Page() {
@@ -9,6 +11,11 @@ export default function Page() {
       </div>
       <div className="px-4 lg:px-6">
         <ChartAreaInteractive />
+      </div>
+      <div className="mt-5 grid grid-cols-1 gap-2 px-4 md:grid-cols-3 lg:px-6">
+        <ChartPair />
+        <ChartSession />
+        <ChartPair />
       </div>
     </div>
   )
